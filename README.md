@@ -3,12 +3,12 @@ Spring Boot project to find if a given origin and destination are connected base
  The logic involves recursive object to keep track of all the connected cities to a particular city. The search is based on recursion too until the destination is found.
 
 
-##Prerequisites
+## Prerequisites
  * IDE capable with Java 8 and Gradle.
  * ```file.location``` needs to be set in ```application.yml```
 
 
-##Assumptions
+## Assumptions
 * Project is imporetd as a Gradle project and dependencies are resolved.
 * Each line in file contains 2 city names separated by a comma.
 
@@ -20,7 +20,7 @@ Spring Boot project to find if a given origin and destination are connected base
 * Current Mutation Test coverage is 95% and the threshold is set to that.
 
 
-##Running the App
+## Running the App
  * Paste the data in the file located in the above path.
  * Run the Application file ```ConnectCitiesApplication.java```.
  * Hit the REST endpoint with format:
