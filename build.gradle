@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.3.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'info.solidsoft.pitest'
+
+
+group = 'com.mc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter')
+
+    testCompile "org.powermock:powermock-api-mockito:1.6.6"
+    testCompile "org.powermock:powermock-module-junit4:1.6.6"
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+pitest {
+    targetClasses = ['com.mc.connectcities.*']
+    excludedClasses = ["com.mc.connectcities.model.*"]
+    outputFormats = ['XML', 'HTML']
+    mutationThreshold = 95
+}
