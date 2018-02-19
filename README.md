@@ -9,7 +9,7 @@ Spring Boot project to find if a given origin and destination are connected base
 
 
 ## Assumptions
-* Project is imporetd as a Gradle project and dependencies are resolved.
+* Project is imported as a Gradle project and dependencies are resolved.
 * Each line in file contains 2 city names separated by a comma.
 
 
@@ -21,8 +21,8 @@ Spring Boot project to find if a given origin and destination are connected base
 
 
 ## Running the App
- * Paste the data in the file located in the above path.
- * Run the Application file ```ConnectCitiesApplication.java```.
+ * Paste the data in the file located in the path mentioned in ```application.yml```.
+ * Run the Application file ```ConnectCitiesApp.java```. This should start the application.
  * Hit the REST endpoint with format:
  ```http://localhost:8080/connected?origin=city1&destination=city2```<br />
  Both 'origin' and 'destination' are mandatory.
